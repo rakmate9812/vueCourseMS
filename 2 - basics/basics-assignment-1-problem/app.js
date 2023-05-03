@@ -16,4 +16,7 @@ const app = Vue.createApp({
       return Math.random();
     },
   },
-}).mount("#assignment");
+});
+
+// attaching to the node with the id: assignment
+app.mount("#assignment");

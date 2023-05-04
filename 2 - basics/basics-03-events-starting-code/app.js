@@ -6,6 +6,7 @@ const app = Vue.createApp({
       confirmedName: "",
     };
   },
+
   methods: {
     reduceCounter(num) {
       return (this.counter -= num);

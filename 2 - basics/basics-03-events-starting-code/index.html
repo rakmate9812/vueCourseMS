@@ -19,6 +19,8 @@
       <h2>Events in Action</h2>
       <!-- simple click function (not ideal) -->
       <button v-on:click="counter++">Add</button>
+      <!-- v-once only fires once, wont change later -->
+      <button v-once>Starting counter: {{ counter }}</button>
       <!-- eventlistener calling a js function -->
       <!-- "prevent" keyword is the same as e.preventDefault(), middle is referring to the middle mouse button (there are much more) -->
       <button

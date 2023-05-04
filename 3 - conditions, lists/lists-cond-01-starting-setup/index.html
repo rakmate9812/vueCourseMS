@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Course Goals</h1>
+    </header>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+      <input type="text" v-model="enteredGoalValue" />
+      <button @click="addGoal">Add Goal</button>
+      <!-- 
+        v-if - only accepts truthy or falsy values 
+        v-show is the same, but it just sets the css ot the dom element to display:none - v-if is better-->
+      <!-- if goals (list in js) length equals 0 it will be visible -->
+      <p v-if="goals.length === 0">
+        No goals have been added yet - please start adding some!
+      </p>
+      <!-- v-else: needs to be immediately after the v-if - there are v-else-if too, same rules -->
+      <ul v-else="goals.length > 0">
+        <!-- 
+          v-for - creating dom elements with loop
+          playing with some examples
+          also binding a click event for removing the element from the list (and the ui)
+        -->
+        <!-- <li v-for="goal in goals">{{ goal }}</li> -->
+        <!-- <li v-for="num in 10">{{ num }}</li> -->
+        <!-- 
+          inside the opening and closing tags you can use the goal and idx variable
+          it makes looping very easy, tho it can open up some bugs, for example when you add something inside the <li> element
+          it also gets removed. to stop this functionality, you can use the @click.stop method as shown below
+         -->
+        <!-- 
+          BUG DANGER:
+          Vue introduces the "key" elemnt to html attributes (so it isnt implemented by default to the dom) to avoid bugs when making such examples like below
+          its optional but a lot of times we must use it. first we need to bind it, and add some unique value to it, an id for example
+          here, we just put the value "goal" into it (idk why it works), but with larger datasets it is a must have to make it unique, there will be later examples  
+        
+        -->
+        <li v-for="(goal, idx) in goals" :key="goal" @click="removeGoal(idx)">
+          {{ goal }} - {{ idx }}
+          <input type="text" @click.stop />
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

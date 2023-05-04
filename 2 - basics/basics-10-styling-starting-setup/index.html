@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <section id="styling">
+      <!-- 
+        LOTS of stuff going on BoxA:
+        Binding (with just :) the js code to the (inline) style - what happens in the js code:
+        borderColor (camel cased, js syntax NOT css) will be red if boxASelected (property in app.data) is true, grey if false
+        boxASelected will be true upon click (@), because of the v-on:click="boxSelected('A')" method
+      -->
+      <div
+        class="demo"
+        :style="{borderColor: boxASelected ? 'red' : 'grey'}"
+        @click="boxSelected('A')"></div>
+
+      <!-- 
+          BoxB:
+          binding to the class inside js object apprentices:
+          demo: true - the 'demo' class will be always attached to the class
+          active: boxBSelected - the 'active' class will be attached upon the boxBselected boolean (which is false by default, and set to true with the @click="boxBSelected" method)
+         -->
+      <div
+        :class="{demo:true, active:boxBSelected}"
+        @click="boxSelected('B')"></div>
+
+      <!-- 
+            BoxC
+            the same as BoxB, but the default 'demo' class was put outside into the simple class attribute
+          -->
+      <!-- THIS was boxC by default, but we put all the js code into a computed method, check below -->
+      <!-- <div
+        class="demo"
+        :class="{active:boxCSelected}"
+        @click="boxSelected('C')"></div>
+      -->
+      <!-- COMPUTED classes -->
+      <div class="demo" :class="boxCClasses" @click="boxSelected('C')"></div>
+    </section>
+  </body>
+</html>

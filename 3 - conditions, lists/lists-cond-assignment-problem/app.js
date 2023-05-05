@@ -4,7 +4,6 @@ const app = Vue.createApp({
       tasks: [],
       taskInput: "",
       tasksVisible: true,
-      buttonText: "Hide List",
     };
   },
 
@@ -17,13 +16,14 @@ const app = Vue.createApp({
 
     tasksVisibilityChanger() {
       this.tasksVisible = !this.tasksVisible;
-      this.buttonText === "Hide List"
-        ? (this.buttonText = "Show List")
-        : (this.buttonText = "Hide List");
     },
   },
 
-  computed: {},
+  computed: {
+    buttonText() {
+      return this.tasksVisible ? "Hide List" : "Show List";
+    },
+  },
 
   watch: {},
 });

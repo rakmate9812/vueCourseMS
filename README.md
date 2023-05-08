@@ -18,7 +18,8 @@
 
 ## Good to Know
 
-Node 18 conflicts with webpack, because in the course the teacher uses an older version, which does not compatible with node 18. There is a summary of this problem here: <a src="https://sebhastian.com/error-0308010c-digital-envelope-routines-unsupported/?utm_content=cmp-true">Link</a>
+Node 18 conflicts with webpack, because in the course the teacher uses an older version, which does not compatible with node 18. There is a summary of this problem here: 
+[Link](https://sebhastian.com/error-0308010c-digital-envelope-routines-unsupported/?utm_content=cmp-true)
 
 What worked for me:
 

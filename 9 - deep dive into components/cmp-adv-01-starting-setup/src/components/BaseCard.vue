@@ -2,6 +2,7 @@
   <div>
     <slot name="cardSlot"></slot>
   </div>
+  <!-- Max uses scoped slots also, pretty advanced not gonna dive into it -->
 </template>
 
 <script>

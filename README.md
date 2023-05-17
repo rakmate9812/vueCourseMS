@@ -30,7 +30,7 @@
 
 16 - TODO - "Find a coach" application
 
-17 - "Find a coach" application authentication
+17 - TODO - "Find a coach" application authentication
 
 18 - Deploying Vue app - only theory
 

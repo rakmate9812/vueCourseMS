@@ -14,7 +14,27 @@
 
 6 - Intro to components
 
-7 - Vue CLI + deep dive into components
+7 (+ 8 + 9) - Vue CLI + deep dive into components
+
+10 - "Learning resources" application
+
+11 - Forms
+
+12 - Http requests
+
+13 - Routing
+
+14 - Animations, styles
+
+15 - Vuex
+
+16 - TODO - "Find a coach" application
+
+17 - "Find a coach" application authentication
+
+18 - Deploying Vue app - only theory
+
+19 - Composition API
 
 ## Good to Know
 
